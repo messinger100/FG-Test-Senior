@@ -10,16 +10,18 @@ import 'utils/hive_setup.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
-  await setupHive(); // Inicializa Hive y registra los adaptadores
+  await setupHive(); //Inicializa Hive y registra los adaptadores
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Advanced Task Manager',
+      title: 'Manejador de Tareas',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,

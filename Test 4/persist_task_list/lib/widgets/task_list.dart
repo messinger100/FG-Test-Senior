@@ -5,7 +5,7 @@ import '../data/models/task.dart';
 class TaskList extends StatelessWidget {
   final List<Task> tasks;
 
-  TaskList({required this.tasks});
+  const TaskList({super.key, required this.tasks});
 
   @override
   Widget build(BuildContext context) {

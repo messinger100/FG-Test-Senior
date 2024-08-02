@@ -105,7 +105,7 @@ class PhotoListViewState extends State<PhotoListView> {
               ],
             ),
           ),
-          // Show/Hide Search History
+          // Show/Hide Historial
           ElevatedButton(
             onPressed: () {
               setState(() {
@@ -117,7 +117,7 @@ class PhotoListViewState extends State<PhotoListView> {
               color: Colors.grey[700],
             ),
           ),
-          // Search History
+          // Buscar en el historial
           if (showSearchHistory)
             Expanded(
               child: ListView.builder(
