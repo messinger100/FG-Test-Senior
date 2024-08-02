@@ -1,17 +1,28 @@
-import 'package:hive/hive.dart';
+import 'package:equatable/equatable.dart';
 
-part 'task.g.dart';
-
-@HiveType(typeId: 0)
-class Task extends HiveObject {
-  @HiveField(0)
+class Task extends Equatable {
   final String id;
-
-  @HiveField(1)
   final String name;
+  final bool isCompleted;
 
-  @HiveField(2)
-  bool isCompleted;
+  const Task({
+    required this.id,
+    required this.name,
+    required this.isCompleted,
+  });
 
-  Task({required this.id, required this.name, this.isCompleted = false});
+  @override
+  List<Object> get props => [id, name, isCompleted];
+
+  Task copyWith({
+    String? id,
+    String? name,
+    bool? isCompleted,
+  }) {
+    return Task(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      isCompleted: isCompleted ?? this.isCompleted,
+    );
+  }
 }
